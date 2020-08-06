@@ -1,6 +1,7 @@
+require('dotenv').config();
 const Web3 = require("web3");
 const contractData = require("./data");
-const web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/190611c4be284c0193d645d80947a851"));
+const web3 = new Web3(new Web3.providers.HttpProvider(`https://rinkeby.infura.io/v3/${process.env.INFURA_KEY}`));
 const chalk = require('chalk');
 const parcelFactoryContract = new web3.eth.Contract(contractData.data.abi, contractData.data.address);
 
